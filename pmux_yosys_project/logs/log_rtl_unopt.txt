@@ -1,0 +1,1066 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Executing script file `/mnt/hgfs/yosys_share/pmux_unopt_rtl.ys' --
+
+1. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/pmux_case01_balanced.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/pmux_case01_balanced.v' to AST representation.
+Generating RTLIL representation for module `\pmux_case01_balanced'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \pmux_case01_balanced
+
+2.2. Analyzing design hierarchy..
+Top module:  \pmux_case01_balanced
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:64$18 in module pmux_case01_balanced.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:56$17 in module pmux_case01_balanced.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:48$13 in module pmux_case01_balanced.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:40$9 in module pmux_case01_balanced.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:32$5 in module pmux_case01_balanced.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:24$1 in module pmux_case01_balanced.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_INIT pass (extract init attributes).
+
+3.4. Executing PROC_ARST pass (detect async resets in processes).
+
+3.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:64$18'.
+     1/1: $0\lane[0].q[11:0]
+Creating decoders for process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:56$17'.
+     1/2: $1\lane[0].next_q[11:0]
+     2/2: $0\lane[0].next_q[11:0]
+Creating decoders for process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:48$13'.
+     1/2: $1\lane[0].x3[11:0]
+     2/2: $0\lane[0].x3[11:0]
+Creating decoders for process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:40$9'.
+     1/2: $1\lane[0].x2[11:0]
+     2/2: $0\lane[0].x2[11:0]
+Creating decoders for process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:32$5'.
+     1/2: $1\lane[0].x1[11:0]
+     2/2: $0\lane[0].x1[11:0]
+Creating decoders for process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:24$1'.
+     1/2: $1\lane[0].x0[11:0]
+     2/2: $0\lane[0].x0[11:0]
+
+3.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\pmux_case01_balanced.\lane[0].next_q' from process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:56$17'.
+No latch inferred for signal `\pmux_case01_balanced.\lane[0].x3' from process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:48$13'.
+No latch inferred for signal `\pmux_case01_balanced.\lane[0].x2' from process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:40$9'.
+No latch inferred for signal `\pmux_case01_balanced.\lane[0].x1' from process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:32$5'.
+No latch inferred for signal `\pmux_case01_balanced.\lane[0].x0' from process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:24$1'.
+
+3.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pmux_case01_balanced.\lane[0].q' using process `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:64$18'.
+  created $dff cell `$procdff$49' with positive edge clock.
+
+3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:64$18'.
+Removing empty process `pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:64$18'.
+Found and cleaned up 1 empty switch in `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:56$17'.
+Removing empty process `pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:56$17'.
+Found and cleaned up 1 empty switch in `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:48$13'.
+Removing empty process `pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:48$13'.
+Found and cleaned up 1 empty switch in `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:40$9'.
+Removing empty process `pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:40$9'.
+Found and cleaned up 1 empty switch in `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:32$5'.
+Removing empty process `pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:32$5'.
+Found and cleaned up 1 empty switch in `\pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:24$1'.
+Removing empty process `pmux_case01_balanced.$proc$/mnt/hgfs/yosys_share/pmux_case01_balanced.v:24$1'.
+Cleaned up 7 empty switches.
+
+4. Printing statistics.
+
+=== pmux_case01_balanced ===
+
+   Number of wires:                 64
+   Number of wire bits:            592
+   Number of public wires:          17
+   Number of public wire bits:     215
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     $add                            4
+     $dff                            1
+     $eq                            15
+     $mux                            2
+     $pmux                           5
+     $sub                            4
+     $xor                            4
+
+5. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/pmux_case02_pipeline.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/pmux_case02_pipeline.v' to AST representation.
+Generating RTLIL representation for module `\pmux_case02_pipeline'.
+Successfully finished Verilog frontend.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \pmux_case02_pipeline
+
+6.2. Analyzing design hierarchy..
+Top module:  \pmux_case02_pipeline
+Removed 0 unused modules.
+
+7. Executing PROC pass (convert processes to netlists).
+
+7.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$125 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$124 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$120 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$116 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$115 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$111 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$107 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$106 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$105 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$101 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$97 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$96 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$92 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$88 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$87 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$86 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$82 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$78 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$77 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$73 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$69 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$68 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$67 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$63 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$59 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$58 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$54 in module pmux_case02_pipeline.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$50 in module pmux_case02_pipeline.
+Removed a total of 0 dead cases.
+
+7.3. Executing PROC_INIT pass (extract init attributes).
+
+7.4. Executing PROC_ARST pass (detect async resets in processes).
+
+7.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$125'.
+     1/2: $0\lane[3].mid[2:0]
+     2/2: $0\lane[3].q[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$124'.
+     1/2: $1\lane[3].next_q[2:0]
+     2/2: $0\lane[3].next_q[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$120'.
+     1/2: $1\lane[3].y1[2:0]
+     2/2: $0\lane[3].y1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$116'.
+     1/2: $1\lane[3].y0[2:0]
+     2/2: $0\lane[3].y0[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$115'.
+     1/2: $1\lane[3].first[2:0]
+     2/2: $0\lane[3].first[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$111'.
+     1/2: $1\lane[3].x1[2:0]
+     2/2: $0\lane[3].x1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$107'.
+     1/2: $1\lane[3].x0[2:0]
+     2/2: $0\lane[3].x0[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$106'.
+     1/2: $0\lane[2].q[2:0]
+     2/2: $0\lane[2].mid[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$105'.
+     1/2: $1\lane[2].next_q[2:0]
+     2/2: $0\lane[2].next_q[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$101'.
+     1/2: $1\lane[2].y1[2:0]
+     2/2: $0\lane[2].y1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$97'.
+     1/2: $1\lane[2].y0[2:0]
+     2/2: $0\lane[2].y0[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$96'.
+     1/2: $1\lane[2].first[2:0]
+     2/2: $0\lane[2].first[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$92'.
+     1/2: $1\lane[2].x1[2:0]
+     2/2: $0\lane[2].x1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$88'.
+     1/2: $1\lane[2].x0[2:0]
+     2/2: $0\lane[2].x0[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$87'.
+     1/2: $0\lane[1].q[2:0]
+     2/2: $0\lane[1].mid[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$86'.
+     1/2: $1\lane[1].next_q[2:0]
+     2/2: $0\lane[1].next_q[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$82'.
+     1/2: $1\lane[1].y1[2:0]
+     2/2: $0\lane[1].y1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$78'.
+     1/2: $1\lane[1].y0[2:0]
+     2/2: $0\lane[1].y0[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$77'.
+     1/2: $1\lane[1].first[2:0]
+     2/2: $0\lane[1].first[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$73'.
+     1/2: $1\lane[1].x1[2:0]
+     2/2: $0\lane[1].x1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$69'.
+     1/2: $1\lane[1].x0[2:0]
+     2/2: $0\lane[1].x0[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$68'.
+     1/2: $0\lane[0].q[2:0]
+     2/2: $0\lane[0].mid[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$67'.
+     1/2: $1\lane[0].next_q[2:0]
+     2/2: $0\lane[0].next_q[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$63'.
+     1/2: $1\lane[0].y1[2:0]
+     2/2: $0\lane[0].y1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$59'.
+     1/2: $1\lane[0].y0[2:0]
+     2/2: $0\lane[0].y0[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$58'.
+     1/2: $1\lane[0].first[2:0]
+     2/2: $0\lane[0].first[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$54'.
+     1/2: $1\lane[0].x1[2:0]
+     2/2: $0\lane[0].x1[2:0]
+Creating decoders for process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$50'.
+     1/2: $1\lane[0].x0[2:0]
+     2/2: $0\lane[0].x0[2:0]
+
+7.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\pmux_case02_pipeline.\lane[3].next_q' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$124'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[3].y1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$120'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[3].y0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$116'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[3].first' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$115'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[3].x1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$111'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[3].x0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$107'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[2].next_q' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$105'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[2].y1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$101'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[2].y0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$97'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[2].first' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$96'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[2].x1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$92'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[2].x0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$88'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[1].next_q' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$86'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[1].y1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$82'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[1].y0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$78'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[1].first' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$77'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[1].x1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$73'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[1].x0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$69'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[0].next_q' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$67'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[0].y1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$63'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[0].y0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$59'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[0].first' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$58'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[0].x1' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$54'.
+No latch inferred for signal `\pmux_case02_pipeline.\lane[0].x0' from process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$50'.
+
+7.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pmux_case02_pipeline.\lane[3].q' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$125'.
+  created $dff cell `$procdff$286' with positive edge clock.
+Creating register for signal `\pmux_case02_pipeline.\lane[3].mid' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$125'.
+  created $dff cell `$procdff$287' with positive edge clock.
+Creating register for signal `\pmux_case02_pipeline.\lane[2].mid' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$106'.
+  created $dff cell `$procdff$288' with positive edge clock.
+Creating register for signal `\pmux_case02_pipeline.\lane[2].q' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$106'.
+  created $dff cell `$procdff$289' with positive edge clock.
+Creating register for signal `\pmux_case02_pipeline.\lane[1].mid' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$87'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\pmux_case02_pipeline.\lane[1].q' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$87'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\pmux_case02_pipeline.\lane[0].mid' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$68'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\pmux_case02_pipeline.\lane[0].q' using process `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$68'.
+  created $dff cell `$procdff$293' with positive edge clock.
+
+7.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$125'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$125'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$124'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$124'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$120'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$120'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$116'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$116'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$115'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$115'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$111'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$111'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$107'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$107'.
+Found and cleaned up 2 empty switches in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$106'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$106'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$105'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$105'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$101'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$101'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$97'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$97'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$96'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$96'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$92'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$92'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$88'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$88'.
+Found and cleaned up 2 empty switches in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$87'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$87'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$86'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$86'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$82'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$82'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$78'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$78'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$77'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$77'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$73'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$73'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$69'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$69'.
+Found and cleaned up 2 empty switches in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$68'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:76$68'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$67'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:68$67'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$63'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:60$63'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$59'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:52$59'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$58'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:44$58'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$54'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:36$54'.
+Found and cleaned up 1 empty switch in `\pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$50'.
+Removing empty process `pmux_case02_pipeline.$proc$/mnt/hgfs/yosys_share/pmux_case02_pipeline.v:28$50'.
+Cleaned up 32 empty switches.
+
+8. Printing statistics.
+
+=== pmux_case02_pipeline ===
+
+   Number of wires:                299
+   Number of wire bits:            891
+   Number of public wires:          67
+   Number of public wire bits:     371
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                168
+     $add                           16
+     $dff                            8
+     $eq                            72
+     $mux                           16
+     $pmux                          24
+     $sub                           16
+     $xor                           16
+
+9. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/pmux_case03_crossbar.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/pmux_case03_crossbar.v' to AST representation.
+Generating RTLIL representation for module `\pmux_case03_crossbar'.
+Successfully finished Verilog frontend.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1. Analyzing design hierarchy..
+Top module:  \pmux_case03_crossbar
+
+10.2. Analyzing design hierarchy..
+Top module:  \pmux_case03_crossbar
+Removed 0 unused modules.
+
+11. Executing PROC pass (convert processes to netlists).
+
+11.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+11.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$337 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$332 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$327 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$322 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$317 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$316 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$315 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$310 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$305 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$300 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$295 in module pmux_case03_crossbar.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$294 in module pmux_case03_crossbar.
+Removed a total of 0 dead cases.
+
+11.3. Executing PROC_INIT pass (extract init attributes).
+
+11.4. Executing PROC_ARST pass (detect async resets in processes).
+
+11.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$337'.
+     1/1: $0\lane[1].q[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$332'.
+     1/2: $1\lane[1].next_q[4:0]
+     2/2: $0\lane[1].next_q[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$327'.
+     1/2: $1\lane[1].x3[4:0]
+     2/2: $0\lane[1].x3[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$322'.
+     1/2: $1\lane[1].x2[4:0]
+     2/2: $0\lane[1].x2[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$317'.
+     1/2: $1\lane[1].x1[4:0]
+     2/2: $0\lane[1].x1[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$316'.
+     1/2: $1\lane[1].x0[4:0]
+     2/2: $0\lane[1].x0[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$315'.
+     1/1: $0\lane[0].q[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$310'.
+     1/2: $1\lane[0].next_q[4:0]
+     2/2: $0\lane[0].next_q[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$305'.
+     1/2: $1\lane[0].x3[4:0]
+     2/2: $0\lane[0].x3[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$300'.
+     1/2: $1\lane[0].x2[4:0]
+     2/2: $0\lane[0].x2[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$295'.
+     1/2: $1\lane[0].x1[4:0]
+     2/2: $0\lane[0].x1[4:0]
+Creating decoders for process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$294'.
+     1/2: $1\lane[0].x0[4:0]
+     2/2: $0\lane[0].x0[4:0]
+
+11.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\pmux_case03_crossbar.\lane[1].next_q' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$332'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[1].x3' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$327'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[1].x2' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$322'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[1].x1' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$317'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[1].x0' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$316'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[0].next_q' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$310'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[0].x3' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$305'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[0].x2' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$300'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[0].x1' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$295'.
+No latch inferred for signal `\pmux_case03_crossbar.\lane[0].x0' from process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$294'.
+
+11.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pmux_case03_crossbar.\lane[1].q' using process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$337'.
+  created $dff cell `$procdff$406' with positive edge clock.
+Creating register for signal `\pmux_case03_crossbar.\lane[0].q' using process `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$315'.
+  created $dff cell `$procdff$407' with positive edge clock.
+
+11.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$337'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$337'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$332'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$332'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$327'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$327'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$322'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$322'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$317'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$317'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$316'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$316'.
+Found and cleaned up 2 empty switches in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$315'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:68$315'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$310'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:56$310'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$305'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:48$305'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$300'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:40$300'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$295'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:32$295'.
+Found and cleaned up 1 empty switch in `\pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$294'.
+Removing empty process `pmux_case03_crossbar.$proc$/mnt/hgfs/yosys_share/pmux_case03_crossbar.v:24$294'.
+Cleaned up 14 empty switches.
+
+12. Printing statistics.
+
+=== pmux_case03_crossbar ===
+
+   Number of wires:                138
+   Number of wire bits:            599
+   Number of public wires:          28
+   Number of public wire bits:     217
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 86
+     $add                           10
+     $and                            2
+     $dff                            2
+     $eq                            38
+     $mux                            4
+     $or                             2
+     $pmux                          10
+     $sub                           10
+     $xor                            8
+
+13. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/pmux_case04_feedback.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/pmux_case04_feedback.v' to AST representation.
+Generating RTLIL representation for module `\pmux_case04_feedback'.
+Successfully finished Verilog frontend.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \pmux_case04_feedback
+
+14.2. Analyzing design hierarchy..
+Top module:  \pmux_case04_feedback
+Removed 0 unused modules.
+
+15. Executing PROC pass (convert processes to netlists).
+
+15.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$434 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$432 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$429 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$426 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$422 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$420 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$418 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$415 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$412 in module pmux_case04_feedback.
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$408 in module pmux_case04_feedback.
+Removed a total of 0 dead cases.
+
+15.3. Executing PROC_INIT pass (extract init attributes).
+
+15.4. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$434'.
+Found async reset \rst in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$420'.
+
+15.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$434'.
+     1/1: $0\lane[1].q[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$432'.
+     1/2: $1\lane[1].next_q[7:0]
+     2/2: $0\lane[1].next_q[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$429'.
+     1/2: $1\lane[1].x2[7:0]
+     2/2: $0\lane[1].x2[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$426'.
+     1/2: $1\lane[1].x1[7:0]
+     2/2: $0\lane[1].x1[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$422'.
+     1/2: $1\lane[1].x0[7:0]
+     2/2: $0\lane[1].x0[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$420'.
+     1/1: $0\lane[0].q[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$418'.
+     1/2: $1\lane[0].next_q[7:0]
+     2/2: $0\lane[0].next_q[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$415'.
+     1/2: $1\lane[0].x2[7:0]
+     2/2: $0\lane[0].x2[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$412'.
+     1/2: $1\lane[0].x1[7:0]
+     2/2: $0\lane[0].x1[7:0]
+Creating decoders for process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$408'.
+     1/2: $1\lane[0].x0[7:0]
+     2/2: $0\lane[0].x0[7:0]
+
+15.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\pmux_case04_feedback.\lane[1].next_q' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$432'.
+No latch inferred for signal `\pmux_case04_feedback.\lane[1].x2' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$429'.
+No latch inferred for signal `\pmux_case04_feedback.\lane[1].x1' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$426'.
+No latch inferred for signal `\pmux_case04_feedback.\lane[1].x0' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$422'.
+No latch inferred for signal `\pmux_case04_feedback.\lane[0].next_q' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$418'.
+No latch inferred for signal `\pmux_case04_feedback.\lane[0].x2' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$415'.
+No latch inferred for signal `\pmux_case04_feedback.\lane[0].x1' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$412'.
+No latch inferred for signal `\pmux_case04_feedback.\lane[0].x0' from process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$408'.
+
+15.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pmux_case04_feedback.\lane[1].q' using process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$434'.
+  created $adff cell `$procdff$480' with positive edge clock and positive level reset.
+Creating register for signal `\pmux_case04_feedback.\lane[0].q' using process `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$420'.
+  created $adff cell `$procdff$481' with positive edge clock and positive level reset.
+
+15.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$434'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$434'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$432'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$432'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$429'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$429'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$426'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$426'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$422'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$422'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$420'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:56$420'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$418'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:48$418'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$415'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:40$415'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$412'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:32$412'.
+Found and cleaned up 1 empty switch in `\pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$408'.
+Removing empty process `pmux_case04_feedback.$proc$/mnt/hgfs/yosys_share/pmux_case04_feedback.v:24$408'.
+Cleaned up 10 empty switches.
+
+16. Printing statistics.
+
+=== pmux_case04_feedback ===
+
+   Number of wires:                 98
+   Number of wire bits:            671
+   Number of public wires:          26
+   Number of public wire bits:     291
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 54
+     $add                            6
+     $adff                           2
+     $eq                            24
+     $logic_and                      2
+     $mux                            2
+     $pmux                           8
+     $sub                            4
+     $xor                            6
+
+17. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/pmux_case05_nested.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/pmux_case05_nested.v' to AST representation.
+Generating RTLIL representation for module `\pmux_case05_nested'.
+Successfully finished Verilog frontend.
+
+18. Executing HIERARCHY pass (managing design hierarchy).
+
+18.1. Analyzing design hierarchy..
+Top module:  \pmux_case05_nested
+
+18.2. Analyzing design hierarchy..
+Top module:  \pmux_case05_nested
+Removed 0 unused modules.
+
+19. Executing PROC pass (convert processes to netlists).
+
+19.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+19.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:61$497 in module pmux_case05_nested.
+Marked 5 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:25$482 in module pmux_case05_nested.
+Removed a total of 0 dead cases.
+
+19.3. Executing PROC_INIT pass (extract init attributes).
+
+19.4. Executing PROC_ARST pass (detect async resets in processes).
+
+19.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:61$497'.
+     1/1: $0\lane[0].q[11:0]
+Creating decoders for process `\pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:25$482'.
+     1/6: $5\lane[0].next_q[11:0]
+     2/6: $4\lane[0].next_q[11:0]
+     3/6: $3\lane[0].next_q[11:0]
+     4/6: $2\lane[0].next_q[11:0]
+     5/6: $1\lane[0].next_q[11:0]
+     6/6: $0\lane[0].next_q[11:0]
+
+19.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\pmux_case05_nested.\lane[0].next_q' from process `\pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:25$482'.
+
+19.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pmux_case05_nested.\lane[0].q' using process `\pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:61$497'.
+  created $dff cell `$procdff$550' with positive edge clock.
+
+19.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:61$497'.
+Removing empty process `pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:61$497'.
+Found and cleaned up 5 empty switches in `\pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:25$482'.
+Removing empty process `pmux_case05_nested.$proc$/mnt/hgfs/yosys_share/pmux_case05_nested.v:25$482'.
+Cleaned up 7 empty switches.
+
+20. Printing statistics.
+
+=== pmux_case05_nested ===
+
+   Number of wires:                 68
+   Number of wire bits:            585
+   Number of public wires:          13
+   Number of public wire bits:     167
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 47
+     $add                            5
+     $and                            1
+     $dff                            1
+     $eq                            20
+     $mux                            7
+     $or                             2
+     $pmux                           5
+     $sub                            2
+     $xor                            4
+
+21. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/test1.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/test1.v' to AST representation.
+Generating RTLIL representation for module `\test1'.
+Successfully finished Verilog frontend.
+
+22. Executing HIERARCHY pass (managing design hierarchy).
+
+22.1. Analyzing design hierarchy..
+Top module:  \test1
+
+22.2. Analyzing design hierarchy..
+Top module:  \test1
+Removed 0 unused modules.
+
+23. Executing PROC pass (convert processes to netlists).
+
+23.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+23.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/test1.v:79$551 in module test1.
+Removed a total of 0 dead cases.
+
+23.3. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:67$554'.
+  Set init value: \state = 4'0000
+  Set init value: \por6 = 1'0
+  Set init value: \inter0007 = 1'1
+
+23.4. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+
+23.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:67$554'.
+     1/3: $1\por6[0:0]
+     2/3: $1\inter0007[0:0]
+     3/3: $1\state[3:0]
+Creating decoders for process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+     1/21: $0\q5[11:0]
+     2/21: $0\q7[11:0]
+     3/21: $0\q3[11:0]
+     4/21: $0\q6[11:0]
+     5/21: $0\q4[11:0]
+     6/21: $0\q0[11:0]
+     7/21: $0\q1[11:0]
+     8/21: $0\i7[11:0]
+     9/21: $0\i5[11:0]
+    10/21: $0\q2[11:0]
+    11/21: $0\i6[11:0]
+    12/21: $0\i4[11:0]
+    13/21: $0\i1[11:0]
+    14/21: $0\i0[11:0]
+    15/21: $0\i2[11:0]
+    16/21: $0\inter0009[11:0]
+    17/21: $0\inter0008[11:0]
+    18/21: $0\inter0007[0:0]
+    19/21: $0\i3[11:0]
+    20/21: $0\por6[0:0]
+    21/21: $0\state[3:0]
+
+23.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+23.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\test1.\state' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $adff cell `$procdff$915' with positive edge clock and positive level reset.
+Creating register for signal `\test1.\por6' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$916' with positive edge clock.
+Creating register for signal `\test1.\i3' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$917' with positive edge clock.
+Creating register for signal `\test1.\inter0007' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $adff cell `$procdff$918' with positive edge clock and positive level reset.
+Creating register for signal `\test1.\inter0008' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$919' with positive edge clock.
+Creating register for signal `\test1.\inter0009' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$920' with positive edge clock.
+Creating register for signal `\test1.\i2' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$921' with positive edge clock.
+Creating register for signal `\test1.\i0' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$922' with positive edge clock.
+Creating register for signal `\test1.\i1' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$923' with positive edge clock.
+Creating register for signal `\test1.\i4' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$924' with positive edge clock.
+Creating register for signal `\test1.\i6' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$925' with positive edge clock.
+Creating register for signal `\test1.\q2' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$926' with positive edge clock.
+Creating register for signal `\test1.\i5' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$927' with positive edge clock.
+Creating register for signal `\test1.\i7' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$928' with positive edge clock.
+Creating register for signal `\test1.\q1' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$929' with positive edge clock.
+Creating register for signal `\test1.\q0' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$930' with positive edge clock.
+Creating register for signal `\test1.\q4' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$931' with positive edge clock.
+Creating register for signal `\test1.\q6' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$932' with positive edge clock.
+Creating register for signal `\test1.\q3' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$933' with positive edge clock.
+Creating register for signal `\test1.\q7' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$934' with positive edge clock.
+Creating register for signal `\test1.\q5' using process `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+  created $dff cell `$procdff$935' with positive edge clock.
+
+23.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `test1.$proc$/mnt/hgfs/yosys_share/test1.v:67$554'.
+Found and cleaned up 2 empty switches in `\test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+Removing empty process `test1.$proc$/mnt/hgfs/yosys_share/test1.v:79$551'.
+Cleaned up 2 empty switches.
+
+24. Printing statistics.
+
+=== test1 ===
+
+   Number of wires:                189
+   Number of wire bits:           1060
+   Number of public wires:          44
+   Number of public wire bits:     507
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                141
+     $adff                           2
+     $dff                           19
+     $eq                            98
+     $mux                           17
+     $pmux                           5
+
+25. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/test2.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/test2.v' to AST representation.
+Generating RTLIL representation for module `\test2'.
+Note: Assuming pure combinatorial block at /mnt/hgfs/yosys_share/test2.v:16 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+26. Executing HIERARCHY pass (managing design hierarchy).
+
+26.1. Analyzing design hierarchy..
+Top module:  \test2
+
+26.2. Analyzing design hierarchy..
+Top module:  \test2
+Removed 0 unused modules.
+
+27. Executing PROC pass (convert processes to netlists).
+
+27.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+27.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/test2.v:16$936 in module test2.
+Removed a total of 0 dead cases.
+
+27.3. Executing PROC_INIT pass (extract init attributes).
+
+27.4. Executing PROC_ARST pass (detect async resets in processes).
+
+27.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\test2.$proc$/mnt/hgfs/yosys_share/test2.v:16$936'.
+     1/2: $1\temp[4:0]
+     2/2: $0\temp[4:0]
+
+27.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\test2.\temp' from process `\test2.$proc$/mnt/hgfs/yosys_share/test2.v:16$936'.
+
+27.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+27.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\test2.$proc$/mnt/hgfs/yosys_share/test2.v:16$936'.
+Removing empty process `test2.$proc$/mnt/hgfs/yosys_share/test2.v:16$936'.
+Cleaned up 1 empty switch.
+
+28. Printing statistics.
+
+=== test2 ===
+
+   Number of wires:                 21
+   Number of wire bits:             69
+   Number of public wires:          11
+   Number of public wire bits:      35
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $eq                             4
+     $mux                            4
+
+29. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/test3.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/test3.v' to AST representation.
+Generating RTLIL representation for module `\test3'.
+Successfully finished Verilog frontend.
+
+30. Executing HIERARCHY pass (managing design hierarchy).
+
+30.1. Analyzing design hierarchy..
+Top module:  \test3
+
+30.2. Analyzing design hierarchy..
+Top module:  \test3
+Removed 0 unused modules.
+
+31. Executing PROC pass (convert processes to netlists).
+
+31.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+31.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/test3.v:28$946 in module test3.
+Removed a total of 0 dead cases.
+
+31.3. Executing PROC_INIT pass (extract init attributes).
+
+31.4. Executing PROC_ARST pass (detect async resets in processes).
+
+31.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\test3.$proc$/mnt/hgfs/yosys_share/test3.v:28$946'.
+     1/6: $0\gpioout[7:0] [3:1]
+     2/6: $0\gpioout[7:0] [0]
+     3/6: $0\gpioout[7:0] [7:4]
+     4/6: $0\sr[7:0] [0]
+     5/6: $0\sr_out[0:0]
+     6/6: $0\sr[7:0] [7:1]
+
+31.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+31.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\test3.\gpioout' using process `\test3.$proc$/mnt/hgfs/yosys_share/test3.v:28$946'.
+  created $dff cell `$procdff$982' with positive edge clock.
+Creating register for signal `\test3.\sr' using process `\test3.$proc$/mnt/hgfs/yosys_share/test3.v:28$946'.
+  created $dff cell `$procdff$983' with positive edge clock.
+Creating register for signal `\test3.\sr_out' using process `\test3.$proc$/mnt/hgfs/yosys_share/test3.v:28$946'.
+  created $dff cell `$procdff$984' with positive edge clock.
+
+31.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 4 empty switches in `\test3.$proc$/mnt/hgfs/yosys_share/test3.v:28$946'.
+Removing empty process `test3.$proc$/mnt/hgfs/yosys_share/test3.v:28$946'.
+Cleaned up 4 empty switches.
+
+32. Printing statistics.
+
+=== test3 ===
+
+   Number of wires:                 41
+   Number of wire bits:             90
+   Number of public wires:           7
+   Number of public wire bits:      21
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 25
+     $dff                            3
+     $eq                            10
+     $mux                            9
+     $pmux                           3
+
+33. Executing Verilog-2005 frontend: /mnt/hgfs/yosys_share/test4.v
+Parsing Verilog input from `/mnt/hgfs/yosys_share/test4.v' to AST representation.
+Generating RTLIL representation for module `\test4'.
+Successfully finished Verilog frontend.
+
+34. Executing HIERARCHY pass (managing design hierarchy).
+
+34.1. Analyzing design hierarchy..
+Top module:  \test4
+
+34.2. Analyzing design hierarchy..
+Top module:  \test4
+Removed 0 unused modules.
+
+35. Executing PROC pass (convert processes to netlists).
+
+35.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+35.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$/mnt/hgfs/yosys_share/test4.v:30$985 in module test4.
+Removed a total of 0 dead cases.
+
+35.3. Executing PROC_INIT pass (extract init attributes).
+
+35.4. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset_n in `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+
+35.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+     1/5: $0\dataout[5:0]
+     2/5: $0\datain_5bis7[0:0]
+     3/5: $0\only_5b[0:0]
+     4/5: $0\data_dp[0:0]
+     5/5: $0\data_dn[0:0]
+
+35.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+35.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\test4.\data_dp' using process `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+  created $adff cell `$procdff$1168' with positive edge clock and negative level reset.
+Creating register for signal `\test4.\data_dn' using process `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+  created $adff cell `$procdff$1169' with positive edge clock and negative level reset.
+Creating register for signal `\test4.\dataout' using process `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+  created $adff cell `$procdff$1170' with positive edge clock and negative level reset.
+Creating register for signal `\test4.\only_5b' using process `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+  created $adff cell `$procdff$1171' with positive edge clock and negative level reset.
+Creating register for signal `\test4.\datain_5bis7' using process `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+  created $dff cell `$procdff$1172' with positive edge clock.
+
+35.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+Removing empty process `test4.$proc$/mnt/hgfs/yosys_share/test4.v:30$985'.
+Cleaned up 2 empty switches.
+
+36. Printing statistics.
+
+=== test4 ===
+
+   Number of wires:                191
+   Number of wire bits:            215
+   Number of public wires:           9
+   Number of public wire bits:      18
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                177
+     $adff                           4
+     $dff                            1
+     $eq                           160
+     $logic_not                      2
+     $mux                            5
+     $pmux                           5
+
+End of script. Logfile hash: 925b276138
+CPU: user 0.03s system 0.02s, MEM: 16.48 MB total, 10.77 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 44% 18x read_verilog (0 sec), 17% 9x proc_mux (0 sec), ...

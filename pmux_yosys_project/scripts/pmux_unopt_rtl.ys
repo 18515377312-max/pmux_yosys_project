@@ -1,0 +1,62 @@
+# ========== 1 pmux_case01_balanced ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case01_balanced.v
+hierarchy -check -top pmux_case01_balanced
+proc
+stat
+
+# ========== 2 pmux_case02_pipeline ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case02_pipeline.v
+hierarchy -check -top pmux_case02_pipeline
+proc
+stat
+
+# ========== 3 pmux_case03_crossbar ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case03_crossbar.v
+hierarchy -check -top pmux_case03_crossbar
+proc
+stat
+
+# ========== 4 pmux_case04_feedback ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case04_feedback.v
+hierarchy -check -top pmux_case04_feedback
+proc
+stat
+
+# ========== 5 pmux_case05_nested ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case05_nested.v
+hierarchy -check -top pmux_case05_nested
+proc
+stat
+
+# ========== 6 test1 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test1.v
+hierarchy -check -top test1
+proc
+stat
+
+# ========== 7 test2 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test2.v
+hierarchy -check -top test2
+proc
+stat
+
+# ========== 8 test3 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test3.v
+hierarchy -check -top test3
+proc
+stat
+
+# ========== 9 test4 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test4.v
+hierarchy -check -top test4
+proc
+stat

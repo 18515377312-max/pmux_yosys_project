@@ -1,0 +1,89 @@
+# ========== 1 pmux_case01_balanced ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case01_balanced.v
+hierarchy -check -top pmux_case01_balanced
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out01_balanced.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out01_balanced.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch01_balanced -format svg
+
+# ========== 2 pmux_case02_pipeline ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case02_pipeline.v
+hierarchy -check -top pmux_case02_pipeline
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out02_pipeline.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out02_pipeline.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch02_pipeline -format svg
+
+# ========== 3 pmux_case03_crossbar ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case03_crossbar.v
+hierarchy -check -top pmux_case03_crossbar
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out03_crossbar.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out03_crossbar.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch03_crossbar -format svg
+
+# ========== 4 pmux_case04_feedback ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case04_feedback.v
+hierarchy -check -top pmux_case04_feedback
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out04_feedback.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out04_feedback.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch04_feedback -format svg
+
+# ========== 5 pmux_case05_nested ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case05_nested.v
+hierarchy -check -top pmux_case05_nested
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out05_nested.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out05_nested.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch05_nested -format svg
+
+# ========== 6 test1 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test1.v
+hierarchy -check -top test1
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out_test1.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out_test1.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch_test1 -format svg
+
+# ========== 7 test2 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test2.v
+hierarchy -check -top test2
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out_test2.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out_test2.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch_test2 -format svg
+
+# ========== 8 test3 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test3.v
+hierarchy -check -top test3
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out_test3.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out_test3.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch_test3 -format svg
+
+# ========== 9 test4 ==========
+design -reset
+read_verilog /mnt/hgfs/yosys_share/test4.v
+hierarchy -check -top test4
+synth_ice40
+stat
+write_verilog /mnt/hgfs/yosys_share/synth_result/out_test4.v
+write_blif /mnt/hgfs/yosys_share/synth_result/out_test4.blif
+show -prefix /mnt/hgfs/yosys_share/synth_result/sch_test4 -format svg
